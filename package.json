@@ -1,0 +1,9 @@
+{
+  "name": "jcp-sur-editor-navegador",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "start": "node static-server.cjs",
+    "build:hosting": "node build-hosting.cjs"
+  }
+}

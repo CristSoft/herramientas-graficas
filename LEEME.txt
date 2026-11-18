@@ -1,0 +1,10 @@
+PRUEBA DE EXPORTACIÓN EN EL NAVEGADOR
+
+Abrí la página desde un servidor de archivos estáticos, por ejemplo npm start.
+MP4 y MOV se generan con ffmpeg.wasm dentro del navegador; no existe una API de renderizado.
+La primera exportación descarga el motor de unos 32 MB.
+El MOV usa ProRes 4444 para conservar transparencia.
+Publicado en Firebase Hosting: https://herramientasgraficas.web.app/
+Proyecto de Firebase Hosting: herramientasgraficas.
+Para preparar otra publicación: npm run build:hosting.
+La carpeta public contiene únicamente los archivos de la página y del conversor del navegador.

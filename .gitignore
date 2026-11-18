@@ -1,0 +1,11 @@
+public/
+.firebase/
+firebase-debug.log*
+node_modules/
+.env*
+*.key
+*credentials*.json
+
+# Notas de trabajo locales
+/NOTAS-DE-LA-PRUEBA.md
+/docs/superpowers/

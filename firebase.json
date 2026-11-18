@@ -1,0 +1,29 @@
+{
+  "hosting": {
+    "site": "herramientasgraficas",
+    "public": "public",
+    "ignore": ["**/.*", "**/*.map"],
+    "headers": [
+      {
+        "source": "**/*.html",
+        "headers": [{"key": "Cache-Control", "value": "no-cache"}]
+      },
+      {
+        "source": "**/*.js",
+        "headers": [{"key": "Cache-Control", "value": "no-cache"}]
+      },
+      {
+        "source": "**/*.css",
+        "headers": [{"key": "Cache-Control", "value": "no-cache"}]
+      },
+      {
+        "source": "/vendor/**",
+        "headers": [{"key": "Cache-Control", "value": "public, max-age=3600"}]
+      },
+      {
+        "source": "**/*.wasm",
+        "headers": [{"key": "Content-Type", "value": "application/wasm"}]
+      }
+    ]
+  }
+}
