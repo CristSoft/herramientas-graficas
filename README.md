@@ -5,7 +5,7 @@ Editor web para crear zócalos animados (lower thirds), cierres con logotipo y t
 - [Abrir Herramientas Gráficas](https://herramientasgraficas.web.app/)
 - [Plugin de zócalos para OBS Studio](https://github.com/CristSoft/lower-thirds-zocalos)
 
-En **Descargas** también están los instaladores y la guía de [MultiCam para Android y OBS](https://github.com/CristSoft/MultiCam-Android).
+En **Descargas** también están los instaladores y la guía de MultiCam para Android y OBS.
 
 ## Ejecutar en local
 
