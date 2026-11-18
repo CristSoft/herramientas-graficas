@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const root = __dirname;
 const port = Number(process.env.PORT || 8772);
-const types = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.webp':'image/webp','.ttf':'font/ttf','.wasm':'application/wasm','.txt':'text/plain; charset=utf-8'};
+const types = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.webp':'image/webp','.ttf':'font/ttf','.wasm':'application/wasm','.txt':'text/plain; charset=utf-8','.apk':'application/vnd.android.package-archive','.exe':'application/octet-stream'};
 http.createServer((req, res) => {
   let pathname;
   try { pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname); }
