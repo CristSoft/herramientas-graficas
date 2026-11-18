@@ -5,14 +5,6 @@
     "ignore": ["**/.*", "**/*.map"],
     "headers": [
       {
-        "source": "/downloads/multicam/*.apk",
-        "headers": [{"key": "Content-Type", "value": "application/vnd.android.package-archive"}]
-      },
-      {
-        "source": "/downloads/multicam/*.exe",
-        "headers": [{"key": "Content-Type", "value": "application/octet-stream"}]
-      },
-      {
         "source": "**/*.html",
         "headers": [{"key": "Cache-Control", "value": "no-cache"}]
       },
