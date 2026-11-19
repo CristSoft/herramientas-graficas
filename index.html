@@ -1,82 +1,160 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Herramientas gráficas</title><style>*{box-sizing:border-box}body{margin:0;background:#f3f5f6;color:#17120b;font:15px system-ui,-apple-system,Segoe UI,sans-serif}.app{min-height:100vh;display:flex;flex-direction:column}.top{background:#fff;border-bottom:1px solid #deded9;padding:15px clamp(16px,4vw,42px) 0}.brand{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}.brand strong{font-size:18px}.brand span{font-size:13px;color:#625f57}.tabs{display:flex;gap:6px;margin-top:12px;overflow-x:auto} .tabs button{white-space:nowrap;flex-shrink:0}button{font:inherit;cursor:pointer;border:0;background:transparent;color:#625f57;font-weight:650;padding:12px 16px;border-bottom:3px solid transparent}button[aria-selected=true]{color:#17120b;border-color:#d99108}button:focus-visible{outline:2px solid #865b00;outline-offset:-3px}iframe{display:block;border:0;width:100%;height:calc(100vh - 110px);min-height:500px}[hidden]{display:none!important}
-.downloads{width:min(100%,880px);margin-inline:auto;padding:clamp(24px,5vw,60px) clamp(16px,4vw,32px)}
-.downloads h1{margin:0 0 8px;font-size:clamp(26px,5vw,34px)}
-.downloads p{color:#514e47;line-height:1.55;margin:0 0 16px}
-.download-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:16px;margin:24px 0}
-.download-card{background:#fff;border:1px solid #deded9;border-radius:16px;padding:22px}
-.download-card h3{margin:0 0 8px;font-size:18px}
-.download-group{margin-top:24px}
-.download-group+.download-group{border-top:1px solid #deded9;padding-top:24px}
-.download-group h2{margin:0 0 8px;font-size:24px}
-.download-guide{background:#fff;border:1px solid #deded9;border-radius:16px;padding:clamp(16px,4vw,24px)}
-.download-guide h3{margin:0 0 10px;font-size:18px}
-.download-guide ol{padding-left:22px;margin:0 0 18px;line-height:1.55}
-.download-guide li+li{margin-top:6px}
-.download-guide p:last-child{margin-bottom:0}
-.download-guide code{overflow-wrap:anywhere}
-.download-link{display:inline-flex;align-items:center;min-height:44px;border-radius:8px;background:#ffdf96;color:#342400;padding:8px 14px;font-weight:700;text-decoration:none}
-.download-link:hover{background:#ffd378}.downloads a:focus-visible{outline:2px solid #865b00;outline-offset:3px}
-.repo-link{color:#704700;font-weight:650;display:inline-flex;align-items:center;min-height:44px}
-.brand .source-link{margin-left:auto;white-space:nowrap;display:inline-flex;align-items:center;min-height:36px;color:#704700;font-weight:650}
-.brand .source-link:focus-visible{outline:2px solid #865b00;outline-offset:3px}
-@media(max-width:550px){.brand .source-link{order:0}.brand span{order:1}.brand{row-gap:2px}}
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1c1d24">
+  <title>Herramientas gráficas</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-rail">
+      <div class="app-brand">
+        <span class="app-mark" aria-hidden="true"></span>
+        <strong>Herramientas gráficas</strong>
+      </div>
+      <nav aria-label="Herramientas gráficas">
+        <div class="app-tabs" role="tablist" aria-label="Herramientas gráficas" aria-orientation="vertical">
+          <button type="button" id="tab-lower" role="tab" aria-selected="true" aria-controls="lower">
+            <span class="tool-icon icon-lower" aria-hidden="true"></span>Zócalos
+          </button>
+          <button type="button" id="tab-cierre" role="tab" aria-selected="false" aria-controls="cierre" tabindex="-1">
+            <span class="tool-icon icon-closing" aria-hidden="true"></span>Logo de cierre
+          </button>
+          <button type="button" id="tab-stingers" role="tab" aria-selected="false" aria-controls="stingers" tabindex="-1">
+            <span class="tool-icon icon-stingers" aria-hidden="true"></span>Stingers
+          </button>
+          <button type="button" id="tab-descargas" role="tab" aria-selected="false" aria-controls="descargas" tabindex="-1">
+            <span class="tool-icon icon-download" aria-hidden="true"></span>Descargas
+          </button>
+        </div>
+      </nav>
+      <a class="source-link" href="https://github.com/CristSoft/herramientas-graficas">Código fuente <span aria-hidden="true">↗</span></a>
+    </header>
+    <main class="app-content">
+      <section id="lower" class="editor-tab" role="tabpanel" aria-labelledby="tab-lower">
+        <iframe title="Editor de zócalos" src="/lower/index.html"></iframe>
+      </section>
+      <section id="cierre" class="editor-tab" role="tabpanel" aria-labelledby="tab-cierre" hidden>
+        <iframe title="Editor de logo de cierre" src="/cierre/index.html"></iframe>
+      </section>
+      <section id="stingers" class="editor-tab" role="tabpanel" aria-labelledby="tab-stingers" hidden>
+        <iframe title="Editor de stingers" src="/stingers/index.html"></iframe>
+      </section>
+      <section id="descargas" class="downloads" role="tabpanel" aria-labelledby="tab-descargas" tabindex="0" hidden>
+        <div class="download-content">
+          <header class="downloads-heading">
+            <div>
+              <h1>Descargas</h1>
+              <p>Complementos y aplicaciones para OBS Studio.</p>
+            </div>
+            <div class="download-art" aria-hidden="true">
+              <span class="download-art-screen"></span>
+              <span class="download-art-phone"></span>
+            </div>
+          </header>
+          <section class="download-group" aria-labelledby="downloads-zocalos">
+            <h2 id="downloads-zocalos">Zócalos para OBS</h2>
+            <p>Diseñá y lanzá zócalos animados desde OBS Studio.</p>
+            <div class="download-list">
+              <article class="download-item">
+                <h3>Windows x64</h3>
+                <p>Versión 1.9.3. Cerrá OBS Studio antes de ejecutar el instalador.</p>
+                <a class="download-link" href="https://github.com/CristSoft/lower-thirds-zocalos/releases/download/v1.9.3/Zocalos-OBS-v1.9.3-Instalador-Windows-x64.exe">Descargar instalador para Windows</a>
+              </article>
+              <article class="download-item">
+                <h3>Linux · Ubuntu 26.04 x64</h3>
+                <p>Versión 1.9.3 para OBS Studio 32.1 o posterior instalado mediante APT.</p>
+                <a class="download-link" href="https://github.com/CristSoft/lower-thirds-zocalos/releases/download/v1.9.3/Zocalos-OBS-v1.9.3-Ubuntu-26.04-x64.deb">Descargar paquete para Ubuntu</a>
+              </article>
+            </div>
+            <a class="repo-link" href="https://github.com/CristSoft/lower-thirds-zocalos">Repositorio del plugin de zócalos</a>
+          </section>
 
-@media(max-width:550px){.top{padding-top:12px}.brand span{width:100%}.tabs{margin-top:4px}button{padding:10px 12px}iframe{height:calc(100vh - 125px)}}</style></head><body><div class="app"><header class="top"><div class="brand"><strong>Herramientas gráficas</strong><span>Exportación desde el navegador</span><a class="source-link" href="https://github.com/CristSoft/herramientas-graficas" aria-label="Código fuente de Herramientas Gráficas en GitHub">Código fuente</a></div><nav class="tabs" aria-label="Herramientas gráficas"><button type="button" aria-selected="true" data-view="lower">Lower thirds</button><button type="button" aria-selected="false" data-view="cierre">Logo de cierre</button><button type="button" aria-selected="false" data-view="stingers">Stingers</button><button type="button" aria-selected="false" data-view="descargas">Descargas</button></nav></header><main><iframe id="lower" title="Editor de lower thirds" src="/lower/index.html"></iframe><iframe id="cierre" title="Editor de logo de cierre" src="/cierre/index.html" hidden></iframe><iframe id="stingers" title="Editor de stingers" src="/stingers/index.html" hidden></iframe><section id="descargas" class="downloads" data-panel hidden aria-labelledby="downloads-title">
-  <h1 id="downloads-title">Descargas</h1>
-  <section class="download-group" aria-labelledby="downloads-zocalos">
-    <h2 id="downloads-zocalos">Zócalos para OBS</h2>
-    <p>Diseñá y lanzá zócalos animados desde OBS Studio.</p>
-  <div class="download-grid">
-    <article class="download-card">
-      <h3>Windows x64</h3>
-      <p>Versión 1.9.3. Cerrá OBS Studio antes de ejecutar el instalador.</p>
-      <a class="download-link" href="https://github.com/CristSoft/lower-thirds-zocalos/releases/download/v1.9.3/Zocalos-OBS-v1.9.3-Instalador-Windows-x64.exe">Descargar instalador para Windows</a>
-    </article>
-    <article class="download-card">
-      <h3>Linux · Ubuntu 26.04 x64</h3>
-      <p>Versión 1.9.3 para OBS Studio 32.1 o posterior instalado mediante APT.</p>
-      <a class="download-link" href="https://github.com/CristSoft/lower-thirds-zocalos/releases/download/v1.9.3/Zocalos-OBS-v1.9.3-Ubuntu-26.04-x64.deb">Descargar paquete para Ubuntu</a>
-    </article>
+          <section class="download-group" aria-labelledby="downloads-multicam">
+            <h2 id="downloads-multicam">MultiCam para Android y OBS</h2>
+            <p>Usá uno o más teléfonos Android como cámaras independientes en OBS Studio a través de la red local.</p>
+            <div class="download-list">
+              <article class="download-item">
+                <h3>MultiCam Android</h3>
+                <p>Versión 0.1.0 · Android 8.0 o posterior.</p>
+                <a class="download-link" href="https://github.com/CristSoft/herramientas-graficas/releases/download/multicam-android-0.1.0-obs-0.2.0/MultiCam-Android-0.1.0.apk">Descargar APK de MultiCam</a>
+              </article>
+              <article class="download-item">
+                <h3>MultiCam OBS para Windows x64</h3>
+                <p>Versión 1.0.0 · Compatible con OBS Studio 33.</p>
+                <a class="download-link" href="https://github.com/CristSoft/herramientas-graficas/releases/download/multicam-obs-1.0.0/MultiCam-OBS-Setup-1.0.0.exe">Descargar instalador para Windows</a>
+              </article>
+              <article class="download-item">
+                <h3>MultiCam OBS para Linux x64</h3>
+                <p>Versión 1.0.0 · Paquete .deb para sistemas compatibles con APT.</p>
+                <a class="download-link" href="https://github.com/CristSoft/herramientas-graficas/releases/download/multicam-obs-1.0.0/multicam-obs-1.0.0-x86_64-linux-gnu.deb">Descargar paquete para Linux</a>
+              </article>
+            </div>
+            <details class="download-guide">
+              <summary>Guía de instalación y primer uso</summary>
+              <div class="guide-content">
+                <h3>Instalación</h3>
+                <ol>
+                  <li><strong>En el teléfono:</strong> descargá y abrí el APK. Si Android te lo pide, autorizá la instalación desde el navegador o gestor de archivos con el que lo abriste. Al iniciar MultiCam, concedé el permiso de cámara.</li>
+                  <li><strong>En Windows:</strong> cerrá OBS Studio, ejecutá el instalador como administrador y elegí la opción que corresponda a tu versión de OBS. Para OBS 33, elegí <strong>OBS instalado normalmente 33 o posterior</strong>, o <strong>OBS portátil 33 o posterior</strong> si usás una instalación portátil. En ese caso, indicá su carpeta principal.</li>
+                  <li><strong>En Linux:</strong> cerrá OBS Studio. En la carpeta donde descargaste el paquete, ejecutá <code>sudo apt install ./multicam-obs-1.0.0-x86_64-linux-gnu.deb</code>. El paquete instala el plugin para el OBS del sistema.</li>
+                </ol>
+                <p>El instalador de Windows puede aparecer como de editor desconocido porque no tiene firma digital.</p>
+                <h3>Primer uso</h3>
+                <ol>
+                  <li>Conectá el teléfono y la PC a la misma red local de confianza. Abrí MultiCam Android y pulsá <strong>Iniciar transmisión</strong> (▶).</li>
+                  <li>En OBS, abrí <strong>Paneles → MultiCam Control</strong> y pulsá <strong>+</strong>. Seleccioná el teléfono detectado y agregalo a la escena. Si no aparece, ingresá en modo manual la dirección RTSP que muestra la app.</li>
+                  <li>Para sumar otro teléfono, repetí el proceso con su propia dirección. Cada uno queda como una fuente independiente de OBS.</li>
+                  <li>Para usar los controles remotos, seleccioná <strong>Cam 1</strong>, <strong>Cam 2</strong>, etc., y pulsá <strong>Conectar</strong>. En el primer enlace, compará el número que muestran OBS y el teléfono, y aceptá en el teléfono si coincide. Los controles de cámara disponibles dependen del dispositivo.</li>
+                </ol>
+                <p>El video RTSP no tiene cifrado ni autenticación. Usalo en una red local de confianza, sin exponer el puerto a Internet.</p>
+              </div>
+            </details>
+          </section>
+        </div>
+      </section>
+    </main>
   </div>
-    <a class="repo-link" href="https://github.com/CristSoft/lower-thirds-zocalos">Repositorio del plugin de zócalos</a>
-  </section>
+  <script>
+    const tablist = document.querySelector('[role="tablist"]');
+    const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+    const narrowScreen = matchMedia('(max-width: 840px)');
 
-  <section class="download-group" aria-labelledby="downloads-multicam">
-    <h2 id="downloads-multicam">MultiCam para Android y OBS</h2>
-    <p>Usá uno o más teléfonos Android como cámaras independientes en OBS Studio a través de la red local.</p>
-    <div class="download-grid">
-      <article class="download-card">
-        <h3>MultiCam Android</h3>
-        <p>Versión 0.1.0 · Android 8.0 o posterior.</p>
-        <a class="download-link" href="https://github.com/CristSoft/herramientas-graficas/releases/download/multicam-android-0.1.0-obs-0.2.0/MultiCam-Android-0.1.0.apk">Descargar APK de MultiCam</a>
-      </article>
-      <article class="download-card">
-        <h3>MultiCam OBS para Windows x64</h3>
-        <p>Versión 1.0.0 · Compatible con OBS Studio 33.</p>
-        <a class="download-link" href="https://github.com/CristSoft/herramientas-graficas/releases/download/multicam-obs-1.0.0/MultiCam-OBS-Setup-1.0.0.exe">Descargar instalador para Windows</a>
-      </article>
-      <article class="download-card">
-        <h3>MultiCam OBS para Linux x64</h3>
-        <p>Versión 1.0.0 · Paquete .deb para sistemas compatibles con APT.</p>
-        <a class="download-link" href="https://github.com/CristSoft/herramientas-graficas/releases/download/multicam-obs-1.0.0/multicam-obs-1.0.0-x86_64-linux-gnu.deb">Descargar paquete para Linux</a>
-      </article>
-    </div>
-    <div class="download-guide">
-      <h3>Instalación</h3>
-      <ol>
-        <li><strong>En el teléfono:</strong> descargá y abrí el APK. Si Android te lo pide, autorizá la instalación desde el navegador o gestor de archivos con el que lo abriste. Al iniciar MultiCam, concedé el permiso de cámara.</li>
-        <li><strong>En Windows:</strong> cerrá OBS Studio, ejecutá el instalador como administrador y elegí la opción que corresponda a tu versión de OBS. Para OBS 33, elegí <strong>OBS instalado normalmente 33 o posterior</strong>, o <strong>OBS portátil 33 o posterior</strong> si usás una instalación portátil. En ese caso, indicá su carpeta principal.</li>
-        <li><strong>En Linux:</strong> cerrá OBS Studio. En la carpeta donde descargaste el paquete, ejecutá <code>sudo apt install ./multicam-obs-1.0.0-x86_64-linux-gnu.deb</code>. El paquete instala el plugin para el OBS del sistema.</li>
-      </ol>
-      <p>El instalador de Windows puede aparecer como de editor desconocido porque no tiene firma digital.</p>
-      <h3>Primer uso</h3>
-      <ol>
-        <li>Conectá el teléfono y la PC a la misma red local de confianza. Abrí MultiCam Android y pulsá <strong>Iniciar transmisión</strong> (▶).</li>
-        <li>En OBS, abrí <strong>Paneles → MultiCam Control</strong> y pulsá <strong>+</strong>. Seleccioná el teléfono detectado y agregalo a la escena. Si no aparece, ingresá en modo manual la dirección RTSP que muestra la app.</li>
-        <li>Para sumar otro teléfono, repetí el proceso con su propia dirección. Cada uno queda como una fuente independiente de OBS.</li>
-        <li>Para usar los controles remotos, seleccioná <strong>Cam 1</strong>, <strong>Cam 2</strong>, etc., y pulsá <strong>Conectar</strong>. En el primer enlace, compará el número que muestran OBS y el teléfono, y aceptá en el teléfono si coincide. Los controles de cámara disponibles dependen del dispositivo.</li>
-      </ol>
-      <p>El video RTSP no tiene cifrado ni autenticación. Usalo en una red local de confianza, sin exponer el puerto a Internet.</p>
-    </div>
-  </section>
-</section></main></div><script>document.querySelectorAll('[data-view]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-view]').forEach(item=>item.setAttribute('aria-selected',String(item===button)));document.querySelectorAll('main > iframe, main > [data-panel]').forEach(panel=>panel.hidden=panel.id!==button.dataset.view)}));</script></body></html>
+    function updateOrientation() {
+      tablist.setAttribute('aria-orientation', narrowScreen.matches ? 'horizontal' : 'vertical');
+    }
+
+    function selectTab(tab) {
+      tabs.forEach(item => {
+        const selected = item === tab;
+        item.setAttribute('aria-selected', String(selected));
+        item.tabIndex = selected ? 0 : -1;
+        document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
+      });
+    }
+
+    updateOrientation();
+    narrowScreen.addEventListener('change', updateOrientation);
+    tabs.forEach(tab => tab.addEventListener('click', () => selectTab(tab)));
+    tablist.addEventListener('keydown', event => {
+      const current = tabs.indexOf(event.target);
+      if (current === -1) return;
+
+      const previous = narrowScreen.matches ? 'ArrowLeft' : 'ArrowUp';
+      const next = narrowScreen.matches ? 'ArrowRight' : 'ArrowDown';
+      let index;
+      if (event.key === previous) index = (current + tabs.length - 1) % tabs.length;
+      else if (event.key === next) index = (current + 1) % tabs.length;
+      else if (event.key === 'Home') index = 0;
+      else if (event.key === 'End') index = tabs.length - 1;
+      else return;
+
+      event.preventDefault();
+      selectTab(tabs[index]);
+      tabs[index].focus();
+    });
+  </script>
+</body>
+</html>

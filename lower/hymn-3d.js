@@ -16,7 +16,7 @@
   const HEADLINE_LIMIT = 551;
   const DETAIL_LIMIT = 385;
   const DEFAULT_RIBBON_COLOR = '#7444ac';
-  const atlasURL = new URL('hymn-3d.webp', document.currentScript.src);
+  const atlasURL = new URL('hymn-3d.webp?v=normales-suaves', document.currentScript.src);
   const clamp = (n, min, max) => Math.min(max, Math.max(min, n));
   const luminance = (r, g, b) => 0.2126 * r + 0.7152 * g + 0.0722 * b;
   const ribbonMidtone = luminance(116, 68, 172);

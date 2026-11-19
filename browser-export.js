@@ -49,6 +49,7 @@
         if (!api.setTiming(config)) throw new Error('Revisá los tiempos de entrada, salida y duración total.');
       } else if (kind === 'stingers') {
         api.configure(config);
+        await api.identityReady;
       } else {
         await api.ready;
         api.setConfig(config);
@@ -56,9 +57,9 @@
       await win.document.fonts.ready;
       api.seek(0);
       let fontCSS = '';
-      if (kind === 'cierre') {
+      if (kind === 'cierre' || (kind === 'stingers' && win.document.querySelector('#stinger-identity text'))) {
         const response = await fetch(new URL('cierre/NotoSans-Regular.ttf', BASE), {signal});
-        if (!response.ok) throw new Error('No se pudo cargar la tipografía del cierre.');
+        if (!response.ok) throw new Error('No se pudo cargar la tipografía del logotipo.');
         // Fonts in the SVG must be embedded so the canvas stays independent of external files.
         const bytes = await response.arrayBuffer();
         const fontURL = await new Promise((resolve, reject) => { const r = new FileReader(); r.onload = () => resolve(r.result); r.onerror = reject; r.readAsDataURL(new Blob([bytes], {type:'font/ttf'})); });
